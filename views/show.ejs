@@ -1,0 +1,33 @@
+<%- include('partials/headerWhite') %>
+<style>
+   body {
+      background-color: rgb(238, 238, 238);
+   }
+</style>
+<div class="container show__container">
+   <div class="show-blog__card">
+      <div class="show__image-container">
+         <img class="show__image" src="<%= blog.image %>" alt="image">
+      </div>
+      <div class="show-date">
+         <span class="show-date date-and-heading"><%= blog.created.toDateString() %></span>
+      </div>
+      <div class="show__heading date-and-heading">
+         <h1><%= blog.title %></h1>
+      </div>
+      <div class="show__body">
+         <p><%- blog.body %></p>
+         <a class="ui blue basic button" href="/blogs">Back</a>
+         <form class="edit-button" action="/blogs/<%= blog._id %>/edit?_method=EDIT" method="get">
+            <button class="ui orange basic button class=" ui red basic button">Edit</button>
+         </form>
+         <form class="delete-button" action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
+            <button class="ui red basic button">Delete</button>
+         </form>
+      </div>
+
+   </div>
+</div>
+
+
+<%- include('partials/footerWhite') %>
