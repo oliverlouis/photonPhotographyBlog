@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+
+<div class="header__div">
+   <h4 class="index__header">Read blogs</h4>
+</div>
+
+<div class="container-fluid container">
+   <div class="row">
+      <% blog.forEach(blog => { %>
+      <div class="col-lg-4 col-md-6">
+         <div class="blog__card">
+            <div class="preview__image">
+               <a href="/blogs/<%=blog._id%>"><img src="<%= blog.image %>" alt="image"></a>
+            </div>
+            <span class="preview-date"><%= blog.created.toDateString() %></span>
+            <div class="preview__heading">
+               <a class="heading__text" href="<%= blog._id %>"><%= blog.title %></a>
+            </div>
+            <div class="preview__body">
+               <p><%= blog.body.substring(0, 100) %></p>
+               <a class="ui mini primary basic button" href="/blogs/<%= blog._id %>">Read More</a>
+            </div>
+         </div>
+      </div>
+      <% }); %>
+   </div>
+</div>
+
+
+
+
+
+
+<%- include('partials/footer') %>

@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;900&display=swap');
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   /* overflow-x: hidden; */
+}
+
+.background__gradient {
+   width: 100%;
+   height: 100vh;
+   /* background-image: linear-gradient(#70b5f5, #edf7fa); */
+}
+
+.background__repeat {
+   width: 100%;
+   height: 100vh;
+   /* background-image: linear-gradient( #edf7fa, #70b5f5); */
+}
+
+body {
+   width: 100%;
+   z-index: -1;
+   height: 200vh;
+   background-color: #88c1f6;
+}
+
+/* NAVBAR */
+
+header {
+   float: left;
+   /* position: sticky; */
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   font-family: 'Raleway', sans-serif;
+   padding: 45px 0;
+   color: rgba(red, green, blue, 0.1);
+   z-index: 10;
+   width: 100%;
+}
+
+.logo {
+   margin-left: 3%;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   cursor: pointer;
+   font-size: 30px;
+}
+
+.logo ul li {
+   padding: 0 25px;
+}
+
+.logo h4 {
+   text-transform: uppercase;
+   font-size: 40px;
+   padding: 0 25px;
+   margin-top: 5px;
+   font-weight: 900;
+   font-family: 'Raleway', sans-serif
+}
+
+.nav {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   margin-right: 3%;
+}
+
+.nav a {
+   padding: 0 25px;
+}
+
+.nav__links {
+   list-style: none;
+   font-size: 20px;
+}
+
+.nav__links li {
+   display: inline-block;
+   padding: 0 20px;
+}
+
+.nav__links li a {
+   text-decoration: none;
+}
+
+.cta {
+   padding: 9px;
+   border: 2px solid;
+   border-radius: 5px;
+   background: none;
+   font-weight: 600;
+   letter-spacing: 1px;
+}
+
+.cta:focus {
+   outline: none;
+}
+
+.login {
+   text-decoration: none;
+   font-size: 20px;
+}
+
+.login:hover {
+   text-decoration: none;
+}
+
+ul {
+   display: inline-block;
+   margin-bottom: 0;
+}
+
+.to {
+   font-weight: 500;
+}
+
+.blog-span {
+   font-weight: 700;
+   letter-spacing: 1px;
+}
+
+.to-blogs:hover {
+   text-decoration: none;
+   color: rgb(238, 238, 238);
+}
+
+.to-blogs-blue:hover {
+   text-decoration: none;
+   color: #61a1dd;
+}
+
+.nav__elements {
+   color: rgb(238, 238, 238);
+}
+
+.nav__elements:hover {
+   text-decoration: none;
+}
+
+.nav__elements .create__blog {
+   color: rgb(238, 238, 238);
+   font-weight: 550;
+   letter-spacing: 1px;
+}
+
+/* NAVBAR-BLUE */
+
+.nav__elements-blue .create__blog-blue {
+   color: #61a1dd;
+   font-weight: 550;
+   letter-spacing: 1px;
+}
+
+.nav__elements-blue {
+   color: #61a1dd;
+}
+
+/* INDEX BODY */
+
+.card-container {
+   width: 100vw;
+}
+
+@keyframes scaledown {
+   0% {
+      -webkit-transform: scale(1.1);
+      transform: scale(1.1);
+   }
+   100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+   }
+}
+
+.header__div {
+   padding: 0 25px;
+   margin: 0 auto;
+   text-align: center;
+   margin-bottom: 100px;
+}
+
+.index__header {
+   font-size: 40px;
+   font-weight: 600;
+   font-family: 'Raleway', sans-serif;
+   color: rgb(238, 238, 238);
+   letter-spacing: 1px;
+}
+
+.blog__card {
+   background-color: rgb(238, 238, 238);
+   height: 470px;
+   width: 350px;
+   padding: 7px;
+   border-radius: 10px;
+   margin: 15px 5px;
+   box-shadow: -4px 6px 75px -9px rgba(110, 110, 110, 0.3);
+}
+
+.preview__image {
+   background-color: rgb(238, 238, 238);
+   height: 300px;
+   border-radius: 10px;
+}
+
+.preview__image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 10px;
+}
+
+.preview__heading a {
+   font-size: 20px;
+   font-weight: bold;
+   color: rgb(24, 24, 24);
+   text-decoration: none;
+   margin: 20px 0;
+}
+
+.heading__text {
+   margin-top: 20px;
+}
+
+.preview__body p {
+   margin-top: 20px;
+}
+
+.primary a {
+   margin-left: 50px;
+}
+
+/* NEW BLOG FORM */
+
+.big-container {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+}
+
+.form-container {
+   width: 60%;
+   height: 80vh;
+   margin-top: 0px;
+   border: 1px solid white;
+   border-radius: 20px;
+   background-color: rgb(250, 250, 250);
+   box-shadow: -4px 6px 36px -3px rgba(110, 110, 110, 0.3);
+}
+
+.container h4 {
+   font-family: 'Raleway', sans-serif;
+   color: rgb(56, 56, 56);
+   font-size: 35px;
+   font-weight: 600;
+   margin-left: 15%;
+   margin-top: 30px;
+}
+
+.input {
+   display: block;
+   width: 70%;
+   height: 50px;
+   margin: 25px auto 0px;
+   border: none;
+   border-radius: 15px;
+   background: none;
+   outline: none;
+   padding: 5px 0 5px 15px;
+   box-shadow: -4px 6px 36px -3px rgba(110, 110, 110, 0.3);
+}
+
+textarea {
+   width: 70%;
+   height: 330px;
+   margin: 25px auto 10px;
+   border: none;
+   border-radius: 15px;
+   background: none;
+   outline: none;
+   padding: 15px 0 5px 15px;
+   box-shadow: -4px 6px 75px -9px rgba(110, 110, 110, 0.3);
+}
+
+form {
+   display: flex;
+   flex-direction: column;
+   align-content: center;
+}
+
+::-webkit-input-placeholder {
+   color: rgb(161, 161, 161);
+   font-weight: bold;
+   letter-spacing: 1px;
+}
+
+.submit__button {
+   width: 200px;
+   height: 50px;
+   padding: 10px;
+   font-size: 20px;
+   border: none;
+   outline: none;
+   border-radius: 15px;
+   margin-top: 25px;
+   margin-left: 15%;
+   color: white;
+   background-color: rgb(79, 151, 245);
+}
+
+.submit__button:focus {
+   outline: none;
+}
+
+/* SHOW ROUTE */
+
+.show__image-container {
+   width: 100%;
+   padding: 0 155px;
+}
+
+.show__image {
+   border-radius: 15px;
+   margin: 0 auto;
+   text-align: center;
+   width: 100%;
+}
+
+/* .show__container {
+   display: flex;
+   justify-content: center;
+} */
+
+.show__body {
+   padding: 15px 155px;
+   font-size: 16px;
+}
+
+.show__body p {
+   line-height: 30px;
+}
+
+.show__body a {
+   font-size: 20px;
+}
+
+.date-and-heading {
+   padding: 20px 155px;
+}
+
+.show-date {
+   margin-top: 20px;
+}
+
+.back-button {
+   width: 150px;
+   height: 30px;
+}
+
+/* UPDATE ROUTE */
+
+.cancel__button {
+   /* text-align: center; */
+   width: 200px;
+   height: 60px;
+   padding: 13px 40px;
+   font-size: 20px;
+   border: none;
+   outline: none;
+   border-radius: 15px;
+   margin-top: 25px;
+   margin-left: 10px;
+   color: white;
+   background-color: rgb(113, 117, 121);
+}
+
+.cancel__button:hover {
+   text-decoration: none;
+   color: white;
+}
+
+/* DELETE ROUTE */
+
+.delete-button {
+   display: inline;
+}
+
+.edit-button {
+   display: inline;
+}

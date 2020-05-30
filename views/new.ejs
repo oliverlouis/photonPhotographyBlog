@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<div class="big-container">
+   <div class="form-container container">
+      <h4>New Blog</h4>
+      <form action="/blogs" method="post">
+
+         <input class="input" type="text" name="blog[title]" placeholder="Blog Title">
+
+         <input class="input" type="text" name="blog[image]" placeholder="Image Url">
+
+         <textarea name="blog[body]" id="" cols="30" rows="10" placeholder="Your Blog goes here"></textarea>
+
+         <button class="submit__button" type="submit">Submit</button>
+
+      </form>
+   </div>
+</div>
+
+
+<%- include('partials/footer') %>
