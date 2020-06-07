@@ -1,5 +1,4 @@
 const express = require('express');
-<<<<<<< HEAD
 (bodyParser = require('body-parser')),
 	(mongoose = require('mongoose')),
 	(colors = require('colors')),
@@ -11,14 +10,6 @@ const express = require('express');
 	(LocalStrategy = require('passport-local')),
 	(expressSanitizer = require('express-sanitizer')),
 	(app = express());
-=======
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const colors = require('colors');
-const methodOverride = require('method-override');
-const expressSanitizer = require('express-sanitizer');
-const app = express();
->>>>>>> dc7199f68e5f6b791614c00b13aaae169f35116c
 
 //CONNECT MONGOOSE TO MONGO DB
 mongoose
@@ -26,7 +17,6 @@ mongoose
 	.then(() => console.log('Connected to Database!'.yellow.bold))
 	.catch((err) => console.log("Couldn't connect to database", err));
 
-<<<<<<< HEAD
 //PASSPORT CONFIG
 app.use(
 	require('express-session')({
@@ -47,8 +37,6 @@ app.use((req, res, next) => {
 	next();
 });
 
-=======
->>>>>>> dc7199f68e5f6b791614c00b13aaae169f35116c
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
@@ -56,17 +44,6 @@ app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 
 //MONGOOSE/MODEL CONFIG
-<<<<<<< HEAD
-=======
-const blogSchema = new mongoose.Schema({
-	title: String,
-	image: String,
-	body: String,
-	created: {type: Date, default: Date.now},
-});
-
-const Blog = mongoose.model('Blog', blogSchema);
->>>>>>> dc7199f68e5f6b791614c00b13aaae169f35116c
 
 //RESTFUL ROUTES
 //INDEX
@@ -79,7 +56,6 @@ app.get('/blogs', (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
-<<<<<<< HEAD
 			res.render('index', {blog: blogs, currentUser: req.user});
 		}
 	});
@@ -87,16 +63,6 @@ app.get('/blogs', (req, res) => {
 //===================================================================
 //CREATE BLOG ROUTES
 //===================================================================
-=======
-			res.render('index', {blog: blogs});
-		}
-	});
-});
-
-app.listen(3000, () => {
-	console.log('Photon Jar Server started'.blue.bold);
-});
->>>>>>> dc7199f68e5f6b791614c00b13aaae169f35116c
 
 //NEW ROUTE
 app.get('/blogs/new', (req, res) => {
@@ -157,7 +123,6 @@ app.delete('/blogs/:id', (req, res) => {
 		}
 	});
 });
-<<<<<<< HEAD
 
 //===================================================================
 //AUTHENTICATION AND SIGN UP ROUTES
@@ -201,5 +166,3 @@ app.get('/logout', (req, res) => {
 app.listen(3000, () => {
 	console.log('Photon Server started'.blue.bold);
 });
-=======
->>>>>>> dc7199f68e5f6b791614c00b13aaae169f35116c
