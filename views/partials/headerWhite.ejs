@@ -30,7 +30,7 @@
          </div>
          <nav class="nav">
             <% if (!currentUser) { %>
-            <a href="/register"><button class="cta nav__elements">Sign Up</button></a>
+            <a href="/register"><button class="cta nav__elements-blue">Sign Up</button></a>
             <a class="login nav__elements-blue" href="/login">Log in</a>
             <% } else { %>
             <a class="nav__elements-blue login" style="color: #61a1dd;">Signed in as <%= currentUser.username %></a></li>
