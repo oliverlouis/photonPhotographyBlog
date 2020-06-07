@@ -244,6 +244,16 @@ ul {
 }
 
 .form-container {
+   width: 60%;
+   height: 80vh;
+   margin-top: 0px;
+   border: 1px solid white;
+   border-radius: 20px;
+   background-color: rgb(250, 250, 250);
+   box-shadow: -4px 6px 36px -3px rgba(110, 110, 110, 0.3);
+}
+
+.authenticate-form-container {
    width: 40%;
    height: 40vh;
    margin-top: 0px;

@@ -29,7 +29,12 @@
             </ul>
          </div>
          <nav class="nav">
+            <% if (!currentUser) { %>
             <a href="/register"><button class="cta nav__elements">Sign Up</button></a>
             <a class="login nav__elements" href="/login">Log in</a>
+            <% } else { %>
+            <a class="nav__elements login" style="color: rgb(238, 238, 238);">Signed in as <%= currentUser.username %></a></li>
+            <a class="login nav__elements" href="/logout">Log out</a>
+            <% } %>
          </nav>
       </header>

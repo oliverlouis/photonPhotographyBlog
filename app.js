@@ -56,7 +56,7 @@ app.get('/blogs', (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
-			res.render('index', {blog: blogs});
+			res.render('index', {blog: blogs, currentUser: req.user});
 		}
 	});
 });

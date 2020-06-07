@@ -29,7 +29,11 @@
             </ul>
          </div>
          <nav class="nav">
-            <a href="#"><button class="cta nav__elements-blue">Subscribe to the Blog</button></a>
-            <a class="login nav__elements-blue" href="/login">Log in</a>
-         </nav>
+            <% if (!currentUser) { %>
+            <a href="/register"><button class="cta nav__elements">Sign Up</button></a>
+            <a class="login nav__elements" href="/login">Log in</a>
+            <% } else { %>
+            <a class="nav__elements-blue login" style="color: #61a1dd;">Signed in as <%= currentUser.username %></a></li>
+            <a class="login nav__elements-blue" href="/logout">Log out</a>
+            <% } %>
       </header>
