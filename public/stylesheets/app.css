@@ -193,9 +193,9 @@ ul {
 
 .blog__card {
    background-color: rgb(238, 238, 238);
-   height: 470px;
+   height: 500px;
    width: 350px;
-   padding: 7px;
+   padding: 15px;
    border-radius: 10px;
    margin: 15px 5px;
    box-shadow: -4px 6px 75px -9px rgba(110, 110, 110, 0.3);
@@ -265,7 +265,7 @@ ul {
 
 .container h4 {
    font-family: 'Raleway', sans-serif;
-   color: rgb(56, 56, 56);
+   color: #88c1f6;
    font-size: 35px;
    font-weight: 600;
    margin-left: 15%;
