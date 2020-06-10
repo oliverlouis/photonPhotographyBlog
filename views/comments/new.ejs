@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+<div class="big-container">
+   <div class="form-container container">
+      <h4>New Comment</h4>
+      <form action="/blogs/<%= blog_id%>/comments" method="post">
+         <input class="input" type="text" name="comment[text]" placeholder="Add comment">
+         <button class="submit__button" type="submit">Submit</button>
+      </form>
+   </div>
+</div>
+
+
+<%- include('../partials/footer') %>
