@@ -40,13 +40,16 @@ router.post('/blogs', middleware.isLoggedIn, (req, res) => {
 
 //SHOW ROUTE
 router.get('/blogs/:id', (req, res) => {
-	Blog.findById(req.params.id, (err, foundBlog) => {
-		if (err) {
-			res.redirect('/blogs');
-		} else {
-			res.render('blogs/show', {blog: foundBlog});
-		}
-	});
+	Blog.findById(req.params.id)
+		.populate('comments')
+		.exec((err, foundBlog) => {
+			if (err) {
+				console.log(err);
+			} else {
+				//Render Show template with that campground
+				res.render('blogs/show', {blog: foundBlog});
+			}
+		});
 });
 
 //EDIT ROUTE
