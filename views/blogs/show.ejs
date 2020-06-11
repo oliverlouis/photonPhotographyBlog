@@ -1,15 +1,13 @@
 <%- include('../partials/headerWhite') %>
-<style>
-   body {
-      background-color: rgb(238, 238, 238);
-   }
-</style>
+
 <div class="container show__container">
    <div class="show-blog__card">
       <div class="show__image-container">
          <img class="show__image" src="<%= blog.image %>" alt="image">
       </div>
+
       <div class="show-date">
+         <p class="submitted__by"><em>Submitted by <%=blog.author.username%></em></p>
          <span class="show-date date-and-heading"><%= blog.created.toDateString() %></span>
       </div>
       <div class="show__heading date-and-heading">
@@ -17,12 +15,12 @@
       </div>
       <div class="show__body">
          <p><%- blog.body %></p>
-         <a class="ui blue basic button" href="/blogs">Back</a>
+         <a class="ui blue basic button mini" href="/blogs">Back</a>
          <form class="edit-button" action="/blogs/<%= blog._id %>/edit?_method=EDIT" method="get">
-            <button class="ui orange basic button">Edit</button>
+            <button class="ui orange basic button mini">Edit</button>
          </form>
          <form class="delete-button" action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
-            <button class="ui red basic button">Delete</button>
+            <button class="ui red basic button mini">Delete</button>
          </form>
          <hr class="show__hr">
 
@@ -35,12 +33,12 @@
 
 
             <strong><%= comment.author.username%></strong>
-            <span class="pull-right">10 Days ago</span>
+            <!-- <span class="pull-right">10 Days ago</span> -->
             <p> <%= comment.text %> </p>
             <% if (currentUser && comment.author.id.equals(currentUser._id)) { %>
-            <a class="ui orange basic button" href="/blogs/<%=blog._id%>/comments/<%=comment._id%>/edit">Edit</a>
+            <a class="ui orange basic button mini" href="/blogs/<%=blog._id%>/comments/<%=comment._id%>/edit">Edit</a>
             <form class="comment-delete__button" action="/blogs/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="post">
-               <input type="submit" class="ui red basic button" value="Delete">
+               <input type="submit" class="ui red basic button mini" value="Delete">
             </form>
             <% } %>
             <hr>
@@ -52,6 +50,8 @@
 
    </div>
 </div>
+
+
 
 
 <%- include('../partials/footerWhite') %>
