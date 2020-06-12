@@ -22,7 +22,7 @@ body {
    width: 100%;
    z-index: -1;
    height: 200vh;
-   background-color: #88c1f6;
+   background-color: #222831;
 }
 
 body#show__page {
@@ -111,6 +111,11 @@ header {
 
 .login:hover {
    text-decoration: none;
+   color: rgb(238, 238, 238);
+}
+
+.login:focus {
+   text-decoration: none;
 }
 
 ul {
@@ -134,7 +139,7 @@ ul {
 
 .to-blogs-blue:hover {
    text-decoration: none;
-   color: #61a1dd;
+   color: #222831;
 }
 
 .nav__elements {
@@ -154,13 +159,13 @@ ul {
 /* NAVBAR-BLUE */
 
 .nav__elements-blue .create__blog-blue {
-   color: #61a1dd;
+   color: #222831;
    font-weight: 550;
    letter-spacing: 1px;
 }
 
 .nav__elements-blue {
-   color: #61a1dd;
+   color: #222831;
 }
 
 /* INDEX BODY */
@@ -202,7 +207,6 @@ ul {
    padding: 15px;
    border-radius: 10px;
    margin: 15px 5px;
-   box-shadow: -4px 6px 75px -9px rgba(110, 110, 110, 0.3);
 }
 
 .preview__image {
@@ -435,4 +439,30 @@ form {
    border-radius: 20px;
    background-color: rgb(250, 250, 250);
    box-shadow: -4px 6px 36px -3px rgba(110, 110, 110, 0.3);
+}
+
+/* FLASH MESSAGES */
+
+.flash__message-success {
+   position: absolute;
+   right: 60px;
+   top: 110px;
+   font-family: 'Raleway', sans-serif;
+   font-size: 15px;
+   background-color: #a8df65;
+   color: white;
+   padding: 5px;
+   border-radius: 5px;
+}
+
+.flash__message-error {
+   position: absolute;
+   right: 60px;
+   top: 110px;
+   font-family: 'Raleway', sans-serif;
+   font-size: 15px;
+   background-color: #eb4d55;
+   color: white;
+   padding: 5px;
+   border-radius: 5px;
 }

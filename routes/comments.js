@@ -14,6 +14,7 @@ router.get('/blogs/:id/comments/new', middleware.isLoggedIn, (req, res) => {
 		if (err) {
 			console.log(err);
 		} else {
+			req.flash('error', 'You must first log in!');
 			res.render('comments/new', {blog: blog});
 		}
 	});
@@ -25,6 +26,7 @@ router.post('/blogs/:id/comments', middleware.isLoggedIn, (req, res) => {
 	Blog.findById(req.params.id, (err, blog) => {
 		if (err) {
 			console.log(err);
+			req.flash('error', 'You must first log in!');
 			res.redirect('/blogs');
 		} else {
 			//create new comment
@@ -39,6 +41,7 @@ router.post('/blogs/:id/comments', middleware.isLoggedIn, (req, res) => {
 					//connect new comment to campground
 					blog.comments.push(comment);
 					blog.save();
+					req.flash('success', 'Comment added!');
 					res.redirect('/blogs/' + blog._id);
 				}
 			});
@@ -65,6 +68,7 @@ router.put('/blogs/:id/comments/:comment_id', middleware.checkCommentOwnership, 
 		if (err) {
 			res.redirect('back');
 		} else {
+			req.flash('success', 'Comment edited!');
 			res.redirect('/blogs/' + req.params.id);
 		}
 	});
@@ -74,8 +78,10 @@ router.put('/blogs/:id/comments/:comment_id', middleware.checkCommentOwnership, 
 router.delete('/blogs/:id/comments/:comment_id', middleware.checkCommentOwnership, (req, res) => {
 	Comment.findByIdAndRemove(req.params.comment_id, (err) => {
 		if (err) {
+			req.flash('error', 'You must first log in!');
 			res.redirect('back');
 		} else {
+			req.flash('success', 'Comment deleted!');
 			res.redirect('/blogs/' + req.params.id);
 		}
 	});

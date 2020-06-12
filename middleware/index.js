@@ -12,11 +12,13 @@ middlewareObj.checkBlogOwnership = (req, res, next) => {
 				if (foundBlog.author.id.equals(req.user._id)) {
 					next();
 				} else {
+					req.flash('error', 'You must be the author of this blog to edit it.');
 					res.redirect('back');
 				}
 			}
 		});
 	} else {
+		req.flash('error', 'You must first log in!');
 		res.redirect('back');
 	}
 };
@@ -30,11 +32,13 @@ middlewareObj.checkCommentOwnership = (req, res, next) => {
 				if (foundComment.author.id.equals(req.user._id)) {
 					next();
 				} else {
+					req.flash('error', 'You must be the author of this comment to edit it.');
 					res.redirect('back');
 				}
 			}
 		});
 	} else {
+		req.flash('error', 'You must first log in.');
 		res.redirect('back');
 	}
 };
@@ -43,6 +47,7 @@ middlewareObj.isLoggedIn = (req, res, next) => {
 	if (req.isAuthenticated()) {
 		return next();
 	}
+	req.flash('error', 'You must first log in!');
 	res.redirect('/login');
 };
 

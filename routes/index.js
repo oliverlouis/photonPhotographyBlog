@@ -18,9 +18,11 @@ router.post('/register', (req, res) => {
 	User.register(new User({username: req.body.username}), req.body.password, (err, user) => {
 		if (err) {
 			console.log(err);
+			req.flash('error', err.message);
 			return res.render('register');
 		} else {
 			passport.authenticate('local')(req, res, () => {
+				req.flash('success', 'Welcome to Photon, ' + user.username);
 				res.redirect('/blogs');
 			});
 		}
@@ -34,11 +36,12 @@ router.get('/login', (req, res) => {
 });
 
 //handle login logic
-router.post('/login', passport.authenticate('local', {successRedirect: '/blogs', failureRedirect: '/login'}), (req, res) => {});
+router.post('/login', passport.authenticate('local', {successRedirect: '/blogs', failureRedirect: '/login', failureFlash: true, successFlash: true}), (req, res) => {});
 
 //handle logout logic
 router.get('/logout', (req, res) => {
 	req.logout();
+	req.flash('success', 'Logged out!');
 	res.redirect('back');
 });
 

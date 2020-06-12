@@ -6,7 +6,7 @@ const middleware = require('../middleware');
 //RESTFUL ROUTES
 //INDEX
 router.get('/', (req, res) => {
-	res.redirect('/blogs');
+	res.render('landing');
 });
 
 router.get('/blogs', (req, res) => {

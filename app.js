@@ -23,6 +23,8 @@ mongoose
 	.then(() => console.log('Connected to Database!'.yellow.bold))
 	.catch((err) => console.log("Couldn't connect to database", err));
 
+app.use(flash());
+
 //PASSPORT CONFIG
 app.use(
 	require('express-session')({
@@ -40,6 +42,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
 	res.locals.currentUser = req.user;
+	res.locals.error = req.flash('error');
+	res.locals.success = req.flash('success');
 	next();
 });
 

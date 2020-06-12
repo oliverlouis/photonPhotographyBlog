@@ -37,3 +37,16 @@
          <% } %>
       </nav>
    </header>
+
+   <%if (success && success.length > 0) { %>
+   <div class="flash__message-success">
+      <p><%= success %></p>
+   </div>
+   <% } %>
+
+
+   <%if (error && error.length > 0) { %>
+   <div class="flash__message-error">
+      <p><%= error %></p>
+   </div>
+   <% } %>
