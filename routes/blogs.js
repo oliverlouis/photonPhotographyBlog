@@ -69,7 +69,6 @@ router.get('/blogs/:id', (req, res) => {
 			} else {
 				//Render Show template with that blog
 				res.render('blogs/show', {blog: foundBlog});
-				console.log(foundBlog);
 			}
 		});
 });
