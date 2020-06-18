@@ -11,17 +11,19 @@
          <span class="show-date date-and-heading"><%= blog.created.toDateString() %></span>
       </div>
       <div class="show__heading date-and-heading">
-         <h1><%= blog.title %></h1>
+         <h1><%= blog.name %></h1>
       </div>
       <div class="show__body">
-         <p><%- blog.body %></p>
+         <p><%- blog.description %></p>
          <a class="ui blue basic button mini" href="/blogs">Back</a>
+         <% if (currentUser && blog.author.id.equals(currentUser._id)) { %>
          <form class="edit-button" action="/blogs/<%= blog._id %>/edit?_method=EDIT" method="get">
             <button class="ui orange basic button mini">Edit</button>
          </form>
          <form class="delete-button" action="/blogs/<%= blog._id %>?_method=DELETE" method="post">
             <button class="ui red basic button mini">Delete</button>
          </form>
+         <% } %>
          <hr class="show__hr">
 
          <a class="btn-success btn add__comment" href="/blogs/<%=blog._id%>/comments/new">Add a comment</a>

@@ -21,8 +21,8 @@
 body {
    width: 100%;
    z-index: -1;
-   height: 200vh;
-   background-color: #222831;
+   height: 100vh;
+   background-color: #242931;
 }
 
 body#show__page {
@@ -105,6 +105,7 @@ header {
 }
 
 .login {
+   color: #222831;
    text-decoration: none;
    font-size: 20px;
 }
@@ -168,21 +169,29 @@ ul {
    color: #222831;
 }
 
+/* FOOTER  */
+
+.footer__container {
+   height: 150px;
+   color: rgb(245, 241, 241);
+}
+
+.footer__container p {
+   font-family: 'Raleway', sans-serif;
+   font-size: 20px;
+   text-align: center;
+}
+
+hr {
+   margin: 50px 0;
+   height: 0.5px;
+   background-color: rgb(245, 241, 241);
+}
+
 /* INDEX BODY */
 
 .card-container {
    width: 100vw;
-}
-
-@keyframes scaledown {
-   0% {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-   }
-   100% {
-      -webkit-transform: scale(1.0);
-      transform: scale(1.0);
-   }
 }
 
 .header__div {
@@ -204,7 +213,7 @@ ul {
    background-color: rgb(238, 238, 238);
    height: 500px;
    width: 350px;
-   padding: 15px;
+   /* padding: 15px; */
    border-radius: 10px;
    margin: 15px 5px;
 }
@@ -212,6 +221,7 @@ ul {
 .preview__image {
    background-color: rgb(238, 238, 238);
    height: 300px;
+   width: 100%;
    border-radius: 10px;
 }
 
@@ -219,7 +229,12 @@ ul {
    width: 100%;
    height: 100%;
    object-fit: cover;
-   border-radius: 10px;
+   border-top-right-radius: 10px;
+   border-top-left-radius: 10px;
+}
+
+.card__body {
+   padding: 10px 15px;
 }
 
 .preview__heading a {

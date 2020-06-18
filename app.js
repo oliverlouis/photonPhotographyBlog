@@ -58,8 +58,6 @@ app.use(blogRoutes);
 app.use(commentRoutes);
 app.use(indexRoutes);
 
-//MONGOOSE/MODEL CONFIG
-
 app.listen(3000, () => {
 	console.log('Photon Server started'.blue.bold);
 });

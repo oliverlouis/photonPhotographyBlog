@@ -28,11 +28,32 @@ router.get('/blogs/new', middleware.isLoggedIn, (req, res) => {
 });
 
 //CREATE ROUTE
+// router.post('/blogs', middleware.isLoggedIn, (req, res) => {
+// 	Blog.create(req.body.blog, (err, newBlog) => {
+// 		if (err) {
+// 			res.redirect('new');
+// 		} else {
+// 			res.redirect('/blogs');
+// 		}
+// 	});
+// });
+
 router.post('/blogs', middleware.isLoggedIn, (req, res) => {
-	Blog.create(req.body.blog, (err, newBlog) => {
+	//get data from form and add to campgrounds array
+	const name = req.body.name;
+	const image = req.body.image;
+	const description = req.body.description;
+	let author = {
+		id: req.user._id,
+		username: req.user.username,
+	};
+	let newBlog = {name: name, image: image, description: description, author: author};
+	//Create new blog and add it to database
+	Blog.create(newBlog, (err, blog) => {
 		if (err) {
-			res.redirect('new');
+			console.log(err);
 		} else {
+			//redirect back to campgrounds page
 			res.redirect('/blogs');
 		}
 	});
@@ -46,8 +67,9 @@ router.get('/blogs/:id', (req, res) => {
 			if (err) {
 				console.log(err);
 			} else {
-				//Render Show template with that campground
+				//Render Show template with that blog
 				res.render('blogs/show', {blog: foundBlog});
+				console.log(foundBlog);
 			}
 		});
 });

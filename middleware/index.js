@@ -10,6 +10,7 @@ middlewareObj.checkBlogOwnership = (req, res, next) => {
 				res.redirect('/blogs');
 			} else {
 				if (foundBlog.author.id.equals(req.user._id)) {
+					console.log(req.user._id);
 					next();
 				} else {
 					req.flash('error', 'You must be the author of this blog to edit it.');
