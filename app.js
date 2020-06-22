@@ -11,6 +11,7 @@ const express = require('express'),
 	LocalStrategy = require('passport-local'),
 	expressSanitizer = require('express-sanitizer'),
 	flash = require('connect-flash'),
+	path = require('path'),
 	app = express();
 
 const blogRoutes = require('./routes/blogs'),
@@ -49,7 +50,8 @@ app.use((req, res, next) => {
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressSanitizer());
 app.use(methodOverride('_method'));
 
@@ -58,6 +60,6 @@ app.use(blogRoutes);
 app.use(commentRoutes);
 app.use(indexRoutes);
 
-app.listen(3000, () => {
+app.listen(3300, () => {
 	console.log('Photon Server started'.blue.bold);
 });

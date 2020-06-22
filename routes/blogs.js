@@ -21,7 +21,6 @@ router.get('/blogs', (req, res) => {
 //===================================================================
 //CREATE BLOG ROUTES
 //===================================================================
-
 //NEW ROUTE
 router.get('/blogs/new', middleware.isLoggedIn, (req, res) => {
 	res.render('blogs/new');
