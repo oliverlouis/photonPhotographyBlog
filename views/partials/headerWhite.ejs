@@ -20,7 +20,7 @@
 
 <body id="show__page">
    <div class="">
-      <header>
+      <!-- <header>
          <div class="logo">
             <h4 class="nav__elements-blue">Photon</h4>
             <ul class="nav__links nav__elements-blue">
@@ -38,6 +38,31 @@
             <a class="nav__elements-blue login" style="color: #222831;">Signed in as <%= currentUser.username %></a></li>
             <a class="login nav__elements-blue" href="/logout">Log out</a>
             <% } %>
+      </header> -->
+
+      <header>
+         <nav class="navigation">
+            <div class="logo">
+               <h4 class="nav__elements-blue">Photon</h4>
+            </div>
+            <ul class="nav__links-blue nav__elements-blue">
+               <li class="nav__elements-blue"><a href="/blogs" class="nav__elements-blue to-blogs">to Blogs</a></li>
+               </a>
+               <li class="nav__elements-blue"><a class="create__blog-blue" href="/blogs/new">Create Blog</a> </li>
+               <% if (!currentUser) { %>
+               <li><a href="/register"><button class="cta nav__elements-blue">Sign Up</button></a></li>
+               <li><a class="login nav__elements-blue" href="/login">Log in</a></li>
+               <% } else { %>
+               <li><a class="nav__elements-blue login">Signed in as <%= currentUser.username %></a></li>
+               <li><a class="login nav__elements-blue" href="/logout">Log out</a></li>
+               <% } %>
+            </ul>
+            <div class="burger-blue">
+               <div class="line1"></div class="line1">
+               <div class="line2"></div>
+               <div class="line3"></div>
+            </div>
+         </nav>
       </header>
 
 

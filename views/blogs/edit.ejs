@@ -4,12 +4,12 @@
       <h4>Edit Blog</h4>
       <form action="/blogs/<%= blog._id%>?_method=put" method="post">
 
-         <input class="input" type="text" name="blog[title]" value="<%= blog.title %>">
+         <input class="input" type="text" name="blog[name]" value="<%= blog.name %>">
 
          <input class="input" type="text" name="blog[image]" value="<%= blog.image %>">
 
-         <textarea name="blog[body]" id="" cols="30" rows="10" value=""><%= blog.body %></textarea>
-         <div class="fomr__div">
+         <textarea name="blog[description]" id="" cols="30" rows="10" value=""><%= blog.description %></textarea>
+         <div class="form__div">
             <input class="submit__button" type="submit">
             <a class="cancel__button" href="/blogs/<%= blog._id%>">Cancel</a>
          </div>
