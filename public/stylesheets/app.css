@@ -45,7 +45,8 @@ header {
 .navigation {
    width: 100%;
    display: flex;
-   justify-content: space-around;
+   justify-content: space-between;
+   padding: 0 100px;
 }
 
 .navigation ul li {
@@ -55,7 +56,6 @@ header {
 .nav__links {
    font-size: 20px;
    float: right;
-   margin-right: 55px;
 }
 
 .nav__links-blue {
@@ -277,8 +277,9 @@ hr {
 
 .index__header {
    font-size: 40px;
-   font-weight: 600;
-   font-family: 'Raleway', sans-serif;
+   font-weight: 300;
+   /* font-family: 'Raleway', sans-serif; */
+   font-family: 'Open Sans Condensed', sans-serif;
    color: rgb(238, 238, 238);
    letter-spacing: 1px;
    text-align: center;
