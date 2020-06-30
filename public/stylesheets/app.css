@@ -215,6 +215,7 @@ header {
 
 .nav__elements {
    color: rgb(238, 238, 238);
+   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .nav__elements:hover {
@@ -237,6 +238,7 @@ header {
 
 .nav__elements-blue {
    color: #222831;
+   font-family: 'Open Sans Condensed', sans-serif;
 }
 
 /* FOOTER  */
