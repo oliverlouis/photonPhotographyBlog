@@ -5,28 +5,25 @@
 </div>
 
 <div class="card-container">
-   <div class="card-container">
-      <% blog.forEach(blog => { %>
-      <!-- <div class="col-lg-3"> -->
-      <div class="blog__card">
-         <div class="preview__image">
-            <a href="/blogs/<%=blog._id%>"><img src="<%= blog.image %>" alt="image"></a>
-         </div>
-         <div class="card__body">
-            <span class="preview-date"><%= blog.created.toDateString() %></span>
-            <div class="preview__heading">
-               <a class="heading__text" href="<%= blog._id %>"><%= blog.name %></a>
-            </div>
-            <div class="preview__body">
-               <p><%=blog.description.substring(0,100)%></p>
-               <a class="ui mini primary basic button" href="/blogs/<%= blog._id %>">Read More</a>
-            </div>
-         </div>
-
+   <% blog.forEach(blog => { %>
+   <!-- <div class="col-lg-3"> -->
+   <div class="blog__card">
+      <div class="preview__image">
+         <a href="/blogs/<%=blog._id%>"><img src="<%= blog.image %>" alt="image"></a>
       </div>
-      <!-- </div> -->
-      <% }); %>
+      <div class="card__body">
+         <span class="preview-date"><%= blog.created.toDateString() %></span>
+         <div class="preview__heading">
+            <a class="heading__text" href="<%= blog._id %>"><%= blog.name %></a>
+         </div>
+         <div class="preview__body">
+            <p><%=blog.description.substring(0,100)%></p>
+            <a class="ui mini primary basic button" href="/blogs/<%= blog._id %>">Read More</a>
+         </div>
+      </div>
    </div>
+   <% }); %>
+
 </div>
 
 <%- include('../partials/footer') %>
