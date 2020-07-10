@@ -19,10 +19,12 @@ const blogRoutes = require('./routes/blogs'),
 	indexRoutes = require('./routes/index');
 
 //CONNECT MONGOOSE TO MONGO DB
+// LOCAL DB ---> mongodb//localhost/photon
+// MONGO ATLAS DB ---> mongodb+srv://oliverlouis:rIr0ypjtUqape3lI@cluster0.fvxmf.mongodb.net/photon?retryWrites=true&w=majority
 mongoose
-	.connect('mongodb://localhost/photon', {useNewUrlParser: true, useUnifiedTopology: true})
+	.connect('mongodb+srv://oliverlouis:rIr0ypjtUqape3lI@cluster0.fvxmf.mongodb.net/photon?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
 	.then(() => console.log('Connected to Database!'.yellow.bold))
-	.catch((err) => console.log("Couldn't connect to database", err));
+	.catch((err) => console.log("Couldn't connect to database", err.message));
 
 app.use(flash());
 
