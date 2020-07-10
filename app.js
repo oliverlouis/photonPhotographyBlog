@@ -18,8 +18,10 @@ const blogRoutes = require('./routes/blogs'),
 	commentRoutes = require('./routes/comments'),
 	indexRoutes = require('./routes/index');
 
+console.log(process.env.DATABASEURL);
+
 //CONNECT MONGOOSE TO MONGO DB
-// LOCAL DB ---> mongodb//localhost/photon
+// LOCAL DB ---> mongodb://localhost/photon
 // MONGO ATLAS DB ---> mongodb+srv://oliverlouis:rIr0ypjtUqape3lI@cluster0.fvxmf.mongodb.net/photon?retryWrites=true&w=majority
 mongoose
 	.connect('mongodb+srv://oliverlouis:rIr0ypjtUqape3lI@cluster0.fvxmf.mongodb.net/photon?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
@@ -62,6 +64,9 @@ app.use(blogRoutes);
 app.use(commentRoutes);
 app.use(indexRoutes);
 
-app.listen(3300, () => {
-	console.log('Photon Server started'.blue.bold);
+app.listen(process.env.PORT, process.env.IP, () => {
+	console.log('Server Connected');
 });
+// app.listen(3300, () => {
+// 	console.log('Photon Server started'.blue.bold);
+// });
