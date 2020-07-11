@@ -42,6 +42,28 @@ header {
    font-family: 'Raleway', sans-serif
 }
 
+.home {
+   color: white;
+   text-decoration: none;
+}
+
+.home:hover {
+   color: white;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.home-white {
+   color: #242931;
+   text-decoration: none;
+}
+
+.home-white:hover {
+   color: #242931;
+   text-decoration: none;
+   cursor: pointer;
+}
+
 .navigation {
    width: 100%;
    display: flex;
@@ -103,6 +125,7 @@ header {
    }
    .logo {
       text-align: center;
+      text-decoration: none;
    }
    .nav__links {
       position: absolute;
