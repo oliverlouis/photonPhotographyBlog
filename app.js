@@ -66,6 +66,6 @@ app.listen(process.env.PORT, process.env.IP, () => {
 	console.log('Server Connected');
 });
 
-// app.listen(3000, () => {
-// 	console.log('Photon Server started'.blue.bold);
-// });
+app.listen(3000, () => {
+	console.log('Photon Server started'.blue.bold);
+});

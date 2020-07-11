@@ -303,7 +303,6 @@ hr {
 .index__header {
    font-size: 40px;
    font-weight: 300;
-   /* font-family: 'Raleway', sans-serif; */
    font-family: 'Open Sans Condensed', sans-serif;
    color: rgb(238, 238, 238);
    letter-spacing: 1px;
@@ -314,9 +313,8 @@ hr {
    background-color: rgb(238, 238, 238);
    height: 500px;
    width: 350px;
-   /* padding: 15px; */
    border-radius: 10px;
-   margin: 15px 15px;
+   margin: 40px 15px;
    -webkit-box-shadow: 0px 0px 19px -2px #000000;
    box-shadow: 0px 0px 19px -2px #000000;
 }
@@ -336,14 +334,19 @@ hr {
    border-top-left-radius: 10px;
 }
 
+.preview-date {
+   font-size: 11px;
+   color: grey;
+}
+
 .card__body {
    padding: 10px 15px;
 }
 
 .preview__heading a {
-   font-size: 20px;
+   font-size: 25px;
    font-weight: bold;
-   color: rgb(24, 24, 24);
+   color: #222831;
    text-decoration: none;
    margin: 20px 0;
 }
@@ -353,11 +356,15 @@ hr {
 }
 
 .preview__body p {
-   margin-top: 20px;
+   margin-top: 15px;
 }
 
 .primary a {
    margin-left: 50px;
+}
+
+.read-more {
+   width: 100%;
 }
 
 /* NEW BLOG FORM */
@@ -399,6 +406,9 @@ hr {
       background-color: rgb(250, 250, 250);
       box-shadow: -4px 6px 36px -3px rgba(110, 110, 110, 0.3);
    }
+   .blog__card {
+      margin: 30px 15px;
+   }
 }
 
 @media(max-width: 500px) {
@@ -410,6 +420,9 @@ hr {
       border-radius: 20px;
       background-color: rgb(250, 250, 250);
       box-shadow: -4px 6px 36px -3px rgba(110, 110, 110, 0.3);
+   }
+   .blog__card {
+      margin: 20px 15px;
    }
 }
 
