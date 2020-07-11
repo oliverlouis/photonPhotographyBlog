@@ -545,8 +545,15 @@ form {
    margin-bottom: 20px;
 }
 
+.date-and-heading h1 {
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-weight: bold;
+}
+
 .show-date {
    margin-top: 20px;
+   line-height: 0;
+   margin-bottom: 30px;
 }
 
 .submitted__by {
