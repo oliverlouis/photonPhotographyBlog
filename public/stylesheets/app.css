@@ -290,7 +290,7 @@ hr {
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
-   padding: 0 1%;
+   padding: 0;
 }
 
 .header__div {
@@ -369,16 +369,25 @@ hr {
 
 /* NEW BLOG FORM */
 
-.big-container {
+.big-container-edit-blog {
    width: 100%;
-   height: 100vh;
+   margin-top: 70px;
+   /* height: 100%; */
+   display: flex;
+   justify-content: center;
+}
+
+.big-container-edit-comment {
+   width: 100%;
+   margin-top: 70px;
+   /* height: 100%; */
    display: flex;
    justify-content: center;
 }
 
 .form-container {
    width: 90%;
-   height: 90vh;
+   /* height: 100%; */
    margin-top: 0px;
    border: 1px solid white;
    border-radius: 20px;
@@ -480,7 +489,7 @@ form {
    border: none;
    outline: none;
    border-radius: 15px;
-   margin-top: 25px;
+   margin: 25px;
    margin-left: 15%;
    color: white;
    background-color: rgb(79, 151, 245);
@@ -500,6 +509,11 @@ form {
    .submit__button {
       text-align: center;
       margin: 20px auto;
+   }
+   .cancel__button {
+      text-align: center;
+      margin: 0;
+      height: 60px;
    }
 }
 
@@ -572,16 +586,25 @@ form {
 /* UPDATE ROUTE */
 
 .cancel__button {
+   /* width: 200px;
+   height: 50px;
+   padding: 10px;
+   font-size: 20px;
+   border: none;
+   outline: none;
+   border-radius: 15px;
+   margin: 25px;
+   margin-left: 15%;
+   color: white; */
    /* text-align: center; */
    width: 200px;
    height: 60px;
-   padding: 13px 40px;
+   padding: 10px;
    font-size: 20px;
    border: none;
    outline: none;
    border-radius: 15px;
    margin-top: 25px;
-   margin-left: 10px;
    color: white;
    background-color: rgb(113, 117, 121);
 }
@@ -614,12 +637,66 @@ form {
 .add-comment-container {
    padding-top: 30px;
    width: 60%;
-   height: 40vh;
+   /* height: 40vh; */
    margin-top: 0px;
    border: 1px solid white;
    border-radius: 20px;
    background-color: rgb(250, 250, 250);
    box-shadow: -4px 6px 36px -3px rgba(110, 110, 110, 0.3);
+}
+
+@media(max-width: 1024px) {
+   .big-container {
+      margin-top: 17%;
+      height: 100%;
+   }
+   .add-comment-container {
+      width: 90%;
+   }
+   .add-comment-container h4 {
+      margin: 0;
+      text-align: center;
+   }
+   .input {
+      width: 90%;
+   }
+   textarea {
+      width: 90%;
+   }
+   .form__div {
+      width: 90%;
+      margin: 2% auto;
+   }
+   .submit__button {
+      margin: 0;
+   }
+   .cancel__button {
+      width: 100%;
+      height: 100%;
+   }
+}
+
+@media(max-width: 400px) {
+   .big-container {
+      height: 750px;
+   }
+   .container h4 {
+      margin: 10% 7% 0;
+   }
+   .form__div {
+      display: flex;
+      flex-direction: column;
+   }
+   .submit__button {
+      width: 100%;
+      margin-bottom: 10px;
+   }
+   .cancel__button {
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+      margin-bottom: 10px;
+   }
 }
 
 /* FLASH MESSAGES */

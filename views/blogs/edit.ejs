@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-<div class="big-container">
+<div class="big-container-edit-blog">
    <div class="form-container container">
-      <h4>Edit Blog</h4>
+      <h4 class="edit-blog-header">Edit Blog</h4>
       <form action="/blogs/<%= blog._id%>?_method=put" method="post">
 
          <input class="input" type="text" name="blog[name]" value="<%= blog.name %>">
