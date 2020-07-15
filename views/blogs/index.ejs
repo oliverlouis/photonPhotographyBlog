@@ -5,8 +5,7 @@
 </div>
 
 <div class="card-container">
-   <% blog.forEach(blog => { %>
-   <!-- <div class="col-lg-3"> -->
+   <% blog.slice().reverse().forEach(blog => { %>
    <div class="blog__card">
       <div class="preview__image">
          <a href="/blogs/<%=blog._id%>"><img src="<%= blog.image %>" alt="image"></a>
@@ -23,7 +22,6 @@
       </div>
    </div>
    <% }); %>
-
 </div>
 
 <%- include('../partials/footer') %>
