@@ -285,6 +285,10 @@ hr {
 
 /* INDEX BODY */
 
+.input__header {
+   color: #222831;
+}
+
 .card-container {
    width: 100%;
    display: flex;
@@ -434,7 +438,7 @@ hr {
 
 .container h4 {
    font-family: 'Raleway', sans-serif;
-   color: #88c1f6;
+   color: #2a323d;
    font-size: 35px;
    font-weight: 600;
    margin-left: 15%;
@@ -489,7 +493,7 @@ form {
    margin: 25px;
    margin-left: 15%;
    color: white;
-   background-color: rgb(79, 151, 245);
+   background-color: #2a323d;
 }
 
 .submit__button:focus {
