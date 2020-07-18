@@ -437,7 +437,8 @@ hr {
 }
 
 .container h4 {
-   font-family: 'Raleway', sans-serif;
+   font-family: 'Open Sans Condensed', sans-serif;
+   /* font-family: 'Raleway', sans-serif; */
    color: #2a323d;
    font-size: 35px;
    font-weight: 600;
